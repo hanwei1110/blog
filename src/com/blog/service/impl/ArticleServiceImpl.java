@@ -83,22 +83,6 @@ public class ArticleServiceImpl implements ArticleService {
 		return query.list();
 	}
 	
-	public List<Article> getNewArticles(){
-		String hql = "from Article as article order by article.time desc";
-		Query query = sessionFactory.getCurrentSession().createQuery(hql);
-		query.setFirstResult(0);
-		query.setMaxResults(9);
-		return query.list();
-	}
-	
-	public List<Article> getHotArticles(){
-		String hql = "from Article as article order by article.count desc";
-		Query query = sessionFactory.getCurrentSession().createQuery(hql);
-		query.setFirstResult(0);
-		query.setMaxResults(9);
-		return query.list();
-	}
-	
 	public Integer getSize(String type){
 		String hql = "select count(*) from Article as article where article.type=:type";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);

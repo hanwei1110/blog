@@ -19,8 +19,8 @@ public class ArticleDetailAction {
 	
 	private Integer id;
 	private Article article;
-	private Article articleBefore;
-	private Article articleAfter;
+	private Article articleBefore; //上一篇
+	private Article articleAfter; //下一篇
 	
 	public String execute(){
 		articleBefore = articleServiceImpl.queryBefore(id);

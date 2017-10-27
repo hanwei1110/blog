@@ -18,24 +18,17 @@ public class ArticleShowAction {
 	
 	private static Logger logger = Logger.getLogger(ArticleShowAction.class);
 	private List<Article> articles;
-	private List<Article> hotArticles;
-	private List<Article> newArticles;
-	private List<Article> recommendArticles;
-	private int totalPage;
-	private int page=1;
-	private int pageSize=5; 
-	private int size;
+	private int totalPage; //总页数
+	private int page=1;	
+	private int pageSize=5; //每页条数
+	private int size; //总条数
 	private Integer albumId;//只用于相册模块
 	
 	public String execute(){
 		logger.info("文章浏览");
 		size = articleServiceImpl.getSize();
-		
 		totalPage=size%pageSize==0?size/pageSize:size/pageSize+1;
 		articles = articleServiceImpl.getArticles((page-1)*pageSize, pageSize);
-		hotArticles = articleServiceImpl.getHotArticles();
-		newArticles = articleServiceImpl.getNewArticles();
-		recommendArticles = articleServiceImpl.getArticlesByNotice("recommendArticles");
 		return "success";
 	}
 
@@ -45,22 +38,6 @@ public class ArticleShowAction {
 
 	public void setArticles(List<Article> articles) {
 		this.articles = articles;
-	}
-
-	public List<Article> getHotArticles() {
-		return hotArticles;
-	}
-
-	public void setHotArticles(List<Article> hotArticles) {
-		this.hotArticles = hotArticles;
-	}
-
-	public List<Article> getNewArticles() {
-		return newArticles;
-	}
-
-	public void setNewArticles(List<Article> newArticles) {
-		this.newArticles = newArticles;
 	}
 
 	public int getTotalPage() {
@@ -93,14 +70,6 @@ public class ArticleShowAction {
 
 	public void setSize(int size) {
 		this.size = size;
-	}
-
-	public List<Article> getRecommendArticles() {
-		return recommendArticles;
-	}
-
-	public void setRecommendArticles(List<Article> recommendArticles) {
-		this.recommendArticles = recommendArticles;
 	}
 
 	public Integer getAlbumId() {

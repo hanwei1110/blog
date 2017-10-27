@@ -24,10 +24,6 @@ public interface ArticleService {
 	
 	public List<Article> getArticlesByNotice(String notice);
 
-	public List<Article> getNewArticles();
-
-	public List<Article> getHotArticles();
-
 	public Integer getSize(String type);
 
 	public List<Article> getArticles(String type, Integer page, Integer pageSize);

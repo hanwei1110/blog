@@ -61,10 +61,10 @@ public final class ImageUtil {
 
 	public static InputStream getInputStream(BufferedImage image)throws IOException {
 		ByteArrayOutputStream bos = new ByteArrayOutputStream();
-		/*JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(bos);
-		encoder.encode(image);*/
+		
 		 javax.imageio.ImageIO.write(image, "jpg", bos);
 		byte[] imageBts = bos.toByteArray();
+		//存输入流
 		InputStream in = new ByteArrayInputStream(imageBts);
 		return in;
 	}

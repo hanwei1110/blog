@@ -15,40 +15,27 @@ import com.blog.service.PhotoService;
 @Transactional
 @Repository
 public class PhotoServiceImpl implements PhotoService {
-	@Resource private SessionFactory sessionFactory;
+	@Resource 
+	private SessionFactory sessionFactory;
 	
-	/* (non-Javadoc)
-	 * @see com.blog.service.impl.PhotoService#save(com.blog.entity.Photo)
-	 */
 	public void save(Photo photo){
 		sessionFactory.getCurrentSession().persist(photo);
 	}
 	
-	/* (non-Javadoc)
-	 * @see com.blog.service.impl.PhotoService#delete(java.lang.Integer)
-	 */
 	public void delete(Integer id){
 		sessionFactory.getCurrentSession().delete(
 				sessionFactory.getCurrentSession().load(Photo.class, id));
 	}
 	
-	/* (non-Javadoc)
-	 * @see com.blog.service.impl.PhotoService#update(com.blog.entity.Photo)
-	 */
+	
 	public void update(Photo photo){
 		sessionFactory.getCurrentSession().merge(photo);
 	}
 	
-	/* (non-Javadoc)
-	 * @see com.blog.service.impl.PhotoService#query(java.lang.Integer)
-	 */
 	public Photo query(Integer id){
 		return (Photo) sessionFactory.getCurrentSession().get(Photo.class, id);
 	}
 	
-	/* (non-Javadoc)
-	 * @see com.blog.service.impl.PhotoService#getPhotos()
-	 */
 	public List<Photo> getPhotos(){
 		String hql = "from Photo as photo";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);

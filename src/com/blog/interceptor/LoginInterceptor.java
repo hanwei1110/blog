@@ -10,9 +10,8 @@ import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.interceptor.Interceptor;
 
 /**
- * 监听器--监听用户是否登陆了
- * @author hao
- *
+ * 自定义监听器--监听用户是否登陆了
+ * 
  */
 @Controller
 public class LoginInterceptor implements Interceptor {

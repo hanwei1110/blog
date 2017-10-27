@@ -21,9 +21,6 @@
 	
 		<action name="article" class="articleShowAction">
 			<param name="pageSize">5</param>
-			<result name="success" type="chain">critique</result>
-		</action>
-		<action name="critique" class="critiqueShowAction">
 			<result name="success">/WEB-INF/jsp/manage/article_manage.jsp</result>
 		</action>
 	</package>
