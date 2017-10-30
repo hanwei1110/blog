@@ -50,23 +50,6 @@
     			</tr>
       		</table>
       </form>
-      <h3>
-        <p><span>最新评论</span></p>
-      </h3>
-      <ul class="pl_n">
-       <s:iterator value="critiques" >
-        <dl>
-          <dt><img src="../include/images/s8.jpg"> </dt>
-          <dt> </dt>
-          <dd><s:property value="name"/>
-            <time><s:property value="time"/></time>
-          </dd>
-          <dd><a href="#"><s:property value="content" escape="false"/></a></dd>
-        </dl>
-        </s:iterator>
-      </ul>
-      
-    <div class="page"><a title="Total record"><b>113</b></a><b>1</b><a href="/">2</a><a href="/">3</a><a href="/">4</a><a href="/">5</a><a href="/">&gt;</a><a href="/">&gt;&gt;</a></div>
   </article>
   <script src="../include/js/silder.js"></script>
   <div class="clear"></div>
